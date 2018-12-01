@@ -8,9 +8,5 @@ import { InfoPaginaService } from './services/info-pagina.service';
 })
 export class AppComponent {
   title = 'html-to-webapp';
-  constructor(public _infoPagina: InfoPaginaService) {
-
-    // leer json
-
-  }
+  constructor(public _infoPagina: InfoPaginaService) { }
 }
