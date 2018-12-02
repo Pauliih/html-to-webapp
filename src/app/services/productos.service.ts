@@ -10,17 +10,17 @@ export class ProductosService {
   productos: Producto[] = [];
 
   constructor(private http: HttpClient) {
-    this.cargando = false;
     this.cargarProductos();
+    setTimeout(() => {
+      this.cargando = false;
+    }, 300);
   }
 
   private cargarProductos() {
      // Leer JSON de firebase
      this.http.get('https://angular-html-1989.firebaseio.com/productos_idx.json')
      .subscribe( (resp: Producto[]) => {
-       // this.cargada = true;
        this.productos = resp;
-       console.log(this.productos);
      });
   }
 }
